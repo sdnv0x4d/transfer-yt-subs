@@ -1,3 +1,9 @@
+# transfer-yt-subs
+
+**Transferring YouTube subscriptions tool between accounts**
+
+Инструмент переноса подписок на YouTube-каналы между Google-аккаунтами.
+
 ## Требования
 1. `python3`
 2. Установленные зависимости: `pip3 install -r req.txt`
