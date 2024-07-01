@@ -86,13 +86,18 @@ if __name__ == '__main__':
   channels_to_add_quantity = len(channels_to_add)
 
   if channels_to_add_quantity > 200:
+    print()
     print(bcolors.WARNING + 'Channels quantity greater than API quota! Wait for the end of execution and try again next day!' + bcolors.ENDC)
+    print()
 
-
+  counter = 0
   try:
     for channel_id in channels_to_add:
       add_subscription(youtube, channel_id)
+      counter += 1
   except HttpError as e:
     print(bcolors.FAIL + 'An HTTP error {} occurred:\n{}'.format(e.resp.status, e.content) + bcolors.ENDC)
+    print()
+    print('A subscriptions to ' + str(counter) + ' channels ' + 'was ' + bcolors.OKGREEN + 'added.' + bcolors.ENDC)
   else:
-    print('A subscriptions to ' + str(channels_to_add_quantity) + ' channels ' + 'was ' + bcolors.OKGREEN + 'added.' + bcolors.ENDC)
+    print('A subscriptions to ' + str(counter) + ' channels ' + 'was ' + bcolors.OKGREEN + 'added.' + bcolors.ENDC)
