@@ -1,6 +1,6 @@
 ## Требования
 1. `python3`
-2. Установленные зависимости: `pip3 install req.txt`
+2. Установленные зависимости: `pip3 install -r req.txt`
 3. Настроенный YouTube API
 4. Файл с клиентскими кредами `client_secret.json`
 
