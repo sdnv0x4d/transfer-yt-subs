@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 
-import argparse
 import os
 import re
-import time
-import socket
 
 import google.oauth2.credentials
 import google_auth_oauthlib.flow
@@ -24,7 +21,7 @@ SCOPES = ['https://www.googleapis.com/auth/youtube']
 API_SERVICE_NAME = 'youtube'
 API_VERSION = 'v3'
 
-# Аутентификация в два аккаунта с созданием локального веб-сервера на 2х разных портах 
+# Аутентификация в два аккаунта с созданием локального веб-сервера на 2х разных портах
 def get_authenticated_service(export: bool):
   flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRETS_FILE, SCOPES)
   if export:
